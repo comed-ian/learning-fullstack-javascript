@@ -1,7 +1,7 @@
-import config from './config';
 import express from 'express';
 import apiRouter from './api';
- 
+import config from './config';
+
 const server = express();
  
 server.set('view engine', 'ejs');
