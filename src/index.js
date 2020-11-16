@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
+import data from './testData.json';
 
 ReactDOM.render(
-  <App />,
+  <App contests = {data.contests}/>,
   document.getElementById('root')
 );
 
+/*
 setTimeout(() => {
   ReactDOM.render(
     <h2>...</h2>,
     document.getElementById('root')
   );
-}, 4000);
+}, 4000);*/

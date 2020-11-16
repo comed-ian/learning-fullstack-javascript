@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/jscomplete/learn-fullstack-javascript#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "ejs": "^3.1.5",
     "express": "^4.16.4",
+    "json-loader": "^0.5.7",
     "mongodb": "^3.1.13",
+    "node-sass-middleware": "^0.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
@@ -31,6 +34,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "json-loader": "^0.5.7",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "eslint": "^5.12.1",
