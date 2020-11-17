@@ -11,17 +11,27 @@ server.use(sassMiddleware({
   src: path.join(__dirname, 'sass'),
   dest: path.join(__dirname, 'public')
 }));
+
+//import serverRender from './serverRender';
+import serverRender from './serverRender';
  
 server.get('/', (req, res) => {
-  res.render('index', {
-    content: 'Hello Express with <em>EJS<em>'
-  });  //render with EJS
+  serverRender()
+    .then(( {initialMarkup, initialData} ) => {
+      res.render('index', {
+        initialMarkup,
+        initialData
+      });  //passing through to render with EJS
+    })
+    .catch(console.error);
 });
+
  
 server.use('/api', apiRouter);
 server.use(express.static('public'));
  
-server.listen(config.port, () => {
+server.listen(config.port, config.host, () => {
   //print on server terminal
   console.info('Express listening on port ', config.port);
+  
 });

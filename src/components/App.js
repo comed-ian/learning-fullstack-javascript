@@ -8,7 +8,7 @@ import axios from 'axios';
 class App extends React.Component {
   state = {
     pageHeader: 'Naming Contests',
-    contests: []
+    contests: this.props.initialContests
   };
   componentDidMount() {
     axios.get('/api/contests') 
@@ -18,8 +18,6 @@ class App extends React.Component {
         });
       })
       .catch(console.error);
-
-    
   }
   componentWillUnmount() {
     console.log('Just Unmounted');
@@ -39,11 +37,11 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  contests: propTypes.array.isRequired
+  initialContests: propTypes.array.isRequired
 };
 
 App.defaultProps = {
-  contests: '{}'
+  initialContests: []
 };
 
 export default App;
