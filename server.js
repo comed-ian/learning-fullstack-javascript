@@ -15,8 +15,8 @@ server.use(sassMiddleware({
 //import serverRender from './serverRender';
 import serverRender from './serverRender';
  
-server.get('/', (req, res) => {
-  serverRender()
+server.get(['/', '/contest/:contestId'], (req, res) => {
+  serverRender(req.params.contestId)
     .then(( {initialMarkup, initialData} ) => {
       res.render('index', {
         initialMarkup,
